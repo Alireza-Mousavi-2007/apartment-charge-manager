@@ -39,10 +39,12 @@ public class User implements UserDetails {
     )
     private Set<Role> roles;
 
-    @Column(name = "user_building", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "building_id")
     private Building building;
 
-    @Column(name = "user_unit", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id")
     private Unit unit;
 
     @Override

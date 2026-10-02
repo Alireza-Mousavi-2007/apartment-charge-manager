@@ -1,5 +1,6 @@
 package com.apamanager.apartmant_charge_manager.entity;
 
+import com.apamanager.apartmant_charge_manager.enums.ChargeType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,7 +30,11 @@ public class Charge {
     @Column(name = "charge_date_time")
     private LocalDateTime dateTime;
 
+    @Column(name = "charge_type",nullable = false)
+    private ChargeType chargeType;
+
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "building_id")
     private Building building;
 
 }

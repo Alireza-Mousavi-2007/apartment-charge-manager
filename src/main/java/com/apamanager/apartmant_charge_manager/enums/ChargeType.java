@@ -1,6 +1,6 @@
 package com.apamanager.apartmant_charge_manager.enums;
 
-public enum TransactionType {
-    expense,
-    charge
+public enum ChargeType {
+    FIXED,
+    SHARED
 }
