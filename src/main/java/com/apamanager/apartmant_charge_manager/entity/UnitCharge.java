@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @Getter
 @Setter
-public class UnitCharges {
+public class UnitCharge {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
