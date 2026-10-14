@@ -61,5 +61,6 @@ public class UserRepositoryTest {
         Assertions.assertThat(test.get().getBuilding()).isEqualTo(user.getBuilding());
         Assertions.assertThat(test.get().getUnit()).isEqualTo(user.getUnit());
     }
+    
 
 }

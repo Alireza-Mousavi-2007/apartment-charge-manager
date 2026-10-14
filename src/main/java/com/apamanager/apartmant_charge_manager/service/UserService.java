@@ -14,9 +14,9 @@ public interface UserService {
 
     public ResponseUserDto addUser(RequestUserDto requestUserDto);
 
-    public ResponseUserDto updateUserByAdmin(RequestUserDto requestUserDto);
+    public ResponseUserDto updateUserByAdmin(String username, RequestUserDto requestUserDto);
 
-    public ResponseUserDto updateUserByUser(RequestUserUpdateDto requestUserUpdateDto);
+    public ResponseUserDto updateUserByUser(String username, RequestUserUpdateDto requestUserUpdateDto);
 
     public void deleteUser(String username);
 
