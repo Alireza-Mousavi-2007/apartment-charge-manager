@@ -32,7 +32,12 @@ public class AuthorityServiceImpl implements AuthorityService {
     @Override
     public List<ResponseAuthorityDto> findAll() {
         var authorities = authorityRepository.findAll();
-        var authorityDtos = authorities.stream().map(a -> new ResponseAuthorityDto()).toList();
+        var authorityDtos = authorities.stream()
+                .map(a -> ResponseAuthorityDto.builder()
+                        .authority(a.getAuthority())
+                        .build())
+                .toList();
+
         return authorityDtos;
 
     }

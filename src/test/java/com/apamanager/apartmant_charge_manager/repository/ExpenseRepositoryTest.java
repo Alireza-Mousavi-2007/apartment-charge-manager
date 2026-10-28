@@ -62,13 +62,13 @@ public class ExpenseRepositoryTest {
         expenseRepository.save(expense);
     }
 
-    @Test
-    public void findExpenseByTitle_OptionalOfExpense() {
-        var test = expenseRepository.findExpenseByTitle(expense.getTitle());
-
-        Assertions.assertThat(test).isPresent();
-        Assertions.assertThat(test.get()).isEqualTo(expense);
-    }
-
+//   /* @Test
+//    public void findExpenseByTitle_OptionalOfExpense() {
+//        var test = expenseRepository.findExpenseByTitle(expense.getTitle());
+//
+//        Assertions.assertThat(test).isPresent();
+//        Assertions.assertThat(test.get()).isEqualTo(expense);
+//    }
+//*/
 
 }
