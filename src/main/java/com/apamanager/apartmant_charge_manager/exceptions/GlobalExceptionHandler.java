@@ -12,7 +12,15 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(AuthorityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> authorityNotFoundHAndler(AuthorityNotFoundException e){
+    public Map<String,String> authorityNotFoundHandler(AuthorityNotFoundException e){
         return Map.of("message",e.getMessage());
     }
+
+    @ExceptionHandler(RoleNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String,String> RoleNotFoundHandler(RoleNotFoundException e){
+        return Map.of("message",e.getMessage());
+    }
+
+
 }

@@ -14,5 +14,5 @@ public interface RoleService {
 
     public ResponseRoleDto addRole(RequestRoleDto requestRoleDto);
 
-    public void deleteRole();
+    public void deleteRole(String roleName);
 }
