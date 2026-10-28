@@ -14,5 +14,5 @@ public interface AuthorityService {
 
     public ResponseAuthorityDto addAuthority(RequestAuthorityDto requestAuthorityDto);
 
-    public void deleteAuthority();
+    public void deleteAuthority(String authorityName);
 }
