@@ -5,7 +5,6 @@ import com.apamanager.apartmant_charge_manager.dto.request.RequestUserUpdateDto;
 import com.apamanager.apartmant_charge_manager.dto.response.ResponseUserDto;
 import com.apamanager.apartmant_charge_manager.entity.User;
 import com.apamanager.apartmant_charge_manager.exceptions.UserNotFoundException;
-import com.apamanager.apartmant_charge_manager.repository.AuthorityRepository;
 import com.apamanager.apartmant_charge_manager.repository.RoleRepository;
 import com.apamanager.apartmant_charge_manager.repository.UserRepository;
 import com.apamanager.apartmant_charge_manager.service.UserService;
@@ -40,7 +39,8 @@ public class UserServiceImpl implements UserService {
         if (user.isEmpty()) throw new UserNotFoundException(username + " doesn't exists");
 
         var roles = user.get().getRoles().stream()
-                .map(a -> roleRepository.findByRole(a.getRole()).get())
+                .map(a -> roleRepository.findByRole(a.getRole())
+                        .orElseThrow(() -> new UserNotFoundException(username + " doesn't exists")))
                 .collect(Collectors.toSet());
 
         var userDto = ResponseUserDto.builder()
