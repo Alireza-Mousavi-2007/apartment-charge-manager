@@ -13,6 +13,6 @@ import java.util.Set;
 @Setter
 public class RequestRoleDto {
     @NotBlank(message = "role can't be blank.")
-    private String Role;
+    private String role;
     private Set<Authority> authorities;
 }

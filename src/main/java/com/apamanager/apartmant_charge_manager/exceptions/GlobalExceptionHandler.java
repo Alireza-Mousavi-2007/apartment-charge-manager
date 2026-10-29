@@ -18,9 +18,14 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RoleNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> RoleNotFoundHandler(RoleNotFoundException e){
+    public Map<String,String> roleNotFoundHandler(RoleNotFoundException e){
         return Map.of("message",e.getMessage());
     }
 
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String,String> userNotFoundHAndler(UserNotFoundException e){
+        return Map.of("message",e.getMessage());
+    }
 
 }

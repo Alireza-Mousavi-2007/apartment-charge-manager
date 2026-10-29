@@ -9,7 +9,6 @@ import com.apamanager.apartmant_charge_manager.repository.AuthorityRepository;
 import com.apamanager.apartmant_charge_manager.repository.RoleRepository;
 import com.apamanager.apartmant_charge_manager.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,7 +37,7 @@ public class RoleServiceImpl implements RoleService {
                 .collect(Collectors.toSet());
 
         var responseRoleDto = ResponseRoleDto.builder()
-                .Role(foundRole.getRole())
+                .role(foundRole.getRole())
                 .authorities(authorities)
                 .build();
 
@@ -52,7 +51,7 @@ public class RoleServiceImpl implements RoleService {
 
         var rolesDto = roles.stream()
                 .map(a -> ResponseRoleDto.builder()
-                        .Role(a.getRole())
+                        .role(a.getRole())
                         .authorities(a.getAuthorities())
                         .build())
                 .toList();
@@ -68,7 +67,7 @@ public class RoleServiceImpl implements RoleService {
                 .collect(Collectors.toSet());
 
         var responseRoleDto = ResponseRoleDto.builder()
-                .Role(requestRoleDto.getRole())
+                .role(requestRoleDto.getRole())
                 .authorities(authorities)
                 .build();
 

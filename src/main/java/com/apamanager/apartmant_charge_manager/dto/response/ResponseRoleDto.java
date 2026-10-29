@@ -12,6 +12,6 @@ import java.util.Set;
 @Setter
 public class ResponseRoleDto {
 
-    private String Role;
+    private String role;
     private Set<Authority> authorities;
 }
