@@ -14,6 +14,6 @@ public interface BuildingService {
 
     public ResponseBuildingDto addBuilding(RequestBuildingDto requestBuildingDto);
 
-    public void deleteBuilding();
+    public void deleteBuilding(String name);
 
 }

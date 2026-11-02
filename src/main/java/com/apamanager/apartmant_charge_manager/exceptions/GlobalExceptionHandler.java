@@ -22,9 +22,15 @@ public class GlobalExceptionHandler {
         return Map.of("message",e.getMessage());
     }
 
-    @ExceptionHandler
+    @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public Map<String,String> userNotFoundHAndler(UserNotFoundException e){
+        return Map.of("message",e.getMessage());
+    }
+
+    @ExceptionHandler(BuildingNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String,String> buildingNotFoundHandler(BuildingNotFoundException e){
         return Map.of("message",e.getMessage());
     }
 

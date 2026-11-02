@@ -21,7 +21,7 @@ public class Building {
     @Column(name = "building_id")
     private Integer id;
 
-    @Column(name = "building_name", nullable = false)
+    @Column(name = "building_name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "building_address", nullable = false, columnDefinition = "TEXT")
@@ -30,7 +30,6 @@ public class Building {
     //TODO: check . mappedby
     @OneToMany(fetch = FetchType.LAZY)
     private Set<Unit> units;
-
 
 
 }
