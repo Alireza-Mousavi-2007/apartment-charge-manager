@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface ChargeRepository extends JpaRepository<Charge, Integer> {
 
-    // public Optional<Charge> findChargeByTitle(String title);
+    public Optional<Charge> findChargeById(Integer id);
 
 }

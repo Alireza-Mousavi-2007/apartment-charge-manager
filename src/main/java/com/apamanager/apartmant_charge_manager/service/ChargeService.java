@@ -1,5 +1,6 @@
 package com.apamanager.apartmant_charge_manager.service;
 
+import com.apamanager.apartmant_charge_manager.dto.request.RequestChargeDto;
 import com.apamanager.apartmant_charge_manager.dto.response.ResponseChargeDto;
 
 import java.util.List;
@@ -11,10 +12,10 @@ public interface ChargeService {
 
     public List<ResponseChargeDto> findAll();
 
-    public ResponseChargeDto addCharge(ResponseChargeDto responseChargeDto);
+    public ResponseChargeDto addCharge(RequestChargeDto requestChargeDto);
 
-    public ResponseChargeDto updateChargeByTitle(String title, ResponseChargeDto responseChargeDto);
+    public ResponseChargeDto updateChargeById(Integer id, RequestChargeDto requestChargeDto);
 
-    public void deleteCharge();
+    public void deleteChargeById(Integer id);
 
 }

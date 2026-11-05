@@ -12,37 +12,49 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(AuthorityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> authorityNotFoundHandler(AuthorityNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> authorityNotFoundHandler(AuthorityNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 
     @ExceptionHandler(RoleNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> roleNotFoundHandler(RoleNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> roleNotFoundHandler(RoleNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 
     @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> userNotFoundHAndler(UserNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> userNotFoundHAndler(UserNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 
     @ExceptionHandler(BuildingNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> buildingNotFoundHandler(BuildingNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> buildingNotFoundHandler(BuildingNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 
     @ExceptionHandler(UnitNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> unitNotFoundHandler(UnitNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> unitNotFoundHandler(UnitNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 
     @ExceptionHandler(ExpenseNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,String> expenseNotFoundHandler(ExpenseNotFoundException e){
-        return Map.of("message",e.getMessage());
+    public Map<String, String> expenseNotFoundHandler(ExpenseNotFoundException e) {
+        return Map.of("message", e.getMessage());
+    }
+
+    @ExceptionHandler(ChargeNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> chargeNotFoundHandler(ChargeNotFoundException e) {
+        return Map.of("message", e.getMessage());
+    }
+
+    @ExceptionHandler(UnitChargeNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> unitChargeNotFoundHandler(UnitChargeNotFoundException e) {
+        return Map.of("message", e.getMessage());
     }
 }
