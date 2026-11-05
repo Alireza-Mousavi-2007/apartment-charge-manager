@@ -40,4 +40,9 @@ public class GlobalExceptionHandler {
         return Map.of("message",e.getMessage());
     }
 
+    @ExceptionHandler(ExpenseNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String,String> expenseNotFoundHandler(ExpenseNotFoundException e){
+        return Map.of("message",e.getMessage());
+    }
 }

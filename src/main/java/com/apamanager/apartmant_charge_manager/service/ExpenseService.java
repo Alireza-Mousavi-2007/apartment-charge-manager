@@ -16,6 +16,6 @@ public interface ExpenseService {
 
 //    public ResponseExpenseDto updateExpense(String title, RequestExpenseDto requestExpenseDto);
 
-    public void deleteExpense(String title);
+    public void deleteExpense(Integer id);
 
 }
