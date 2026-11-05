@@ -15,5 +15,5 @@ public interface UnitService {
 
     public void deleteUnit(String number);
 
-    public RequestUnitDto updateUnitByNumber(String number, RequestUnitDto requestUnitDto);
+    public ResponseUnitDto updateUnitByNumber(String number, RequestUnitDto requestUnitDto);
 }

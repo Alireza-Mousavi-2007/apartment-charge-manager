@@ -34,4 +34,10 @@ public class GlobalExceptionHandler {
         return Map.of("message",e.getMessage());
     }
 
+    @ExceptionHandler(UnitNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String,String> unitNotFoundHandler(UnitNotFoundException e){
+        return Map.of("message",e.getMessage());
+    }
+
 }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -84,7 +85,25 @@ public class BuildingServiceImplTest {
 
     }
 
-    
+    @Test
+    public void abbBuilding_added_responseBuildingDto() {
+        var test = buildingService.addBuilding(requestBuildingDto);
+
+        Assertions.assertThat(test).isNotNull();
+        Assertions.assertThat(test.getName()).isEqualTo(building.getName());
+        Assertions.assertThat(test.getAddress()).isEqualTo(building.getAddress());
+    }
+
+    @Test
+    public void deleteBuilding_deleted_void() {
+
+        when(buildingRepository.findBuildingByName(anyString())).thenReturn(Optional.of(building));
+
+        buildingService.deleteBuilding(building.getName());
+
+        Mockito.verify(buildingRepository,times(1)).delete(any());
+
+    }
 
 
 }
